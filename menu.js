@@ -1,10 +1,14 @@
-/*
-  ROAST CAFE
-  Digital Menu
-  ------------------------------
-  فعلاً قیمت‌ها وارد نشده‌اند.
-  بعداً قیمت هر محصول را می‌توانیم همین‌جا اضافه کنیم.
-*/
+"use strict";
+
+/* =========================================================
+   ROAST CAFE
+   Digital Menu
+   ========================================================= */
+
+
+/* =========================================================
+   CAFE INFORMATION
+   ========================================================= */
 
 const cafeInfo = {
     openingHours: "ساعت کاری به‌زودی اعلام می‌شود.",
@@ -12,482 +16,704 @@ const cafeInfo = {
 };
 
 
-const menuData = [
+/* =========================================================
+   MENU DATA
+   برای تغییر نام، دسته‌بندی یا قیمت محصولات
+   فقط همین بخش را ویرایش کنید.
+   ========================================================= */
 
-    // ☕ COFFEE | قهوه
+const menuData = [
     {
         id: "coffee",
-        title: "☕ COFFEE | قهوه",
+        title: "قهوه",
+        englishTitle: "COFFEE",
+        icon: "☕",
         products: [
-
-            { name: "اسپرسو سینگل", price: null },
-            { name: "اسپرسو دبل", price: null },
-
-            { name: "لاته سینگل", price: null },
-            { name: "لاته دبل", price: null },
-
-            { name: "لاته کاراملی", price: null },
-            { name: "لاته توت‌فرنگی", price: null },
-            { name: "لاته وانیل", price: null },
-            { name: "لاته فندق", price: null },
-
-            { name: "موکا", price: null },
-            { name: "کارامل ماکیاتو", price: null },
-            { name: "کاپوچینو", price: null },
-
-            { name: "هات چاکلت", price: null },
-            { name: "وایت چاکلت", price: null },
-
-            { name: "آمریکانو سینگل / دبل", price: null }
-
+            {
+                id: "espresso-single",
+                name: "اسپرسو سینگل",
+                price: null
+            },
+            {
+                id: "espresso-double",
+                name: "اسپرسو دبل",
+                price: null
+            },
+            {
+                id: "latte-single",
+                name: "لاته سینگل",
+                price: null
+            },
+            {
+                id: "latte-double",
+                name: "لاته دبل",
+                price: null
+            },
+            {
+                id: "caramel-latte",
+                name: "لاته کاراملی",
+                price: null
+            },
+            {
+                id: "strawberry-latte",
+                name: "لاته توت‌فرنگی",
+                price: null
+            },
+            {
+                id: "vanilla-latte",
+                name: "لاته وانیل",
+                price: null
+            },
+            {
+                id: "hazelnut-latte",
+                name: "لاته فندق",
+                price: null
+            },
+            {
+                id: "mocha",
+                name: "موکا",
+                price: null
+            },
+            {
+                id: "caramel-macchiato",
+                name: "کارامل ماکیاتو",
+                price: null
+            },
+            {
+                id: "cappuccino",
+                name: "کاپوچینو",
+                price: null
+            },
+            {
+                id: "hot-chocolate",
+                name: "هات چاکلت",
+                price: null
+            },
+            {
+                id: "white-chocolate",
+                name: "وایت چاکلت",
+                price: null
+            },
+            {
+                id: "americano-single",
+                name: "آمریکانو سینگل",
+                price: null
+            },
+            {
+                id: "americano-double",
+                name: "آمریکانو دبل",
+                price: null
+            }
         ]
     },
 
-
-    // 🧊 COLD COFFEE | قهوه سرد
     {
         id: "cold-coffee",
-        title: "🧊 COLD COFFEE | قهوه سرد",
+        title: "قهوه سرد",
+        englishTitle: "COLD COFFEE",
+        icon: "🧊",
         products: [
-
-            { name: "آیس لاته", price: null },
-            { name: "آیس موکا", price: null },
-            { name: "آیس آمریکانو", price: null },
-
-            { name: "آیس لاته وانیل", price: null },
-            { name: "آیس لاته فندق", price: null },
-            { name: "آیس لاته توت‌فرنگی", price: null },
-
-            { name: "آیس کارامل ماکیاتو", price: null },
-            { name: "آفوگاتو", price: null }
-
+            {
+                id: "iced-latte",
+                name: "آیس لاته",
+                price: null
+            },
+            {
+                id: "iced-mocha",
+                name: "آیس موکا",
+                price: null
+            },
+            {
+                id: "iced-americano",
+                name: "آیس آمریکانو",
+                price: null
+            },
+            {
+                id: "iced-vanilla-latte",
+                name: "آیس لاته وانیل",
+                price: null
+            },
+            {
+                id: "iced-hazelnut-latte",
+                name: "آیس لاته فندق",
+                price: null
+            },
+            {
+                id: "iced-strawberry-latte",
+                name: "آیس لاته توت‌فرنگی",
+                price: null
+            },
+            {
+                id: "iced-caramel-macchiato",
+                name: "آیس کارامل ماکیاتو",
+                price: null
+            },
+            {
+                id: "affogato",
+                name: "آفوگاتو",
+                price: null
+            }
         ]
     },
 
-
-    // 🫖 TEA | چای
     {
         id: "tea",
-        title: "🫖 TEA | چای",
+        title: "چای",
+        englishTitle: "TEA",
+        icon: "🫖",
         products: [
-
-            { name: "چای سیاه", price: null },
-            { name: "چای انگلیسی", price: null },
-            { name: "چای زعفران", price: null },
-            { name: "چای ترش", price: null },
-            { name: "چای ماسالا", price: null },
-            { name: "چای کرک", price: null }
-
+            {
+                id: "black-tea",
+                name: "چای سیاه",
+                price: null
+            },
+            {
+                id: "english-tea",
+                name: "چای انگلیسی",
+                price: null
+            },
+            {
+                id: "saffron-tea",
+                name: "چای زعفران",
+                price: null
+            },
+            {
+                id: "sour-tea",
+                name: "چای ترش",
+                price: null
+            },
+            {
+                id: "masala-tea",
+                name: "چای ماسالا",
+                price: null
+            },
+            {
+                id: "karak-tea",
+                name: "چای کرک",
+                price: null
+            }
         ]
     },
 
-
-    // 🌿 دمنوش
     {
         id: "herbal-tea",
-        title: "🌿 دمنوش",
+        title: "دمنوش",
+        englishTitle: "HERBAL TEA",
+        icon: "🌿",
         products: [
-
-            { name: "دمنوش گل گاوزبان", price: null },
-            { name: "دمنوش پونه", price: null },
-            { name: "دمنوش میکس", price: null },
-            { name: "دمنوش بهارنارنج", price: null },
-            { name: "دمنوش بابونه", price: null }
-
+            {
+                id: "gol-gavzaban",
+                name: "دمنوش گل گاوزبان",
+                price: null
+            },
+            {
+                id: "puneh",
+                name: "دمنوش پونه",
+                price: null
+            },
+            {
+                id: "mix-herbal-tea",
+                name: "دمنوش میکس",
+                price: null
+            },
+            {
+                id: "bahar-narenj",
+                name: "دمنوش بهارنارنج",
+                price: null
+            },
+            {
+                id: "chamomile",
+                name: "دمنوش بابونه",
+                price: null
+            }
         ]
     },
 
-
-    // 🍰 CAKES | کیک
     {
         id: "cakes",
-        title: "🍰 CAKES | کیک",
+        title: "کیک",
+        englishTitle: "CAKES",
+        icon: "🍰",
         products: [
-
-            { name: "چیزکیک شکلاتی", price: null },
-            { name: "چیزکیک کاراملی", price: null },
-            { name: "چیزکیک توت‌فرنگی", price: null },
-            { name: "چیزکیک لوتوس", price: null },
-
-            { name: "کیک خامه‌ای موزی", price: null },
-            { name: "کیک خیس شکلاتی", price: null },
-            { name: "کیک هویج گردو", price: null },
-            { name: "رولت", price: null }
-
+            {
+                id: "chocolate-cheesecake",
+                name: "چیزکیک شکلاتی",
+                price: null
+            },
+            {
+                id: "caramel-cheesecake",
+                name: "چیزکیک کاراملی",
+                price: null
+            },
+            {
+                id: "strawberry-cheesecake",
+                name: "چیزکیک توت‌فرنگی",
+                price: null
+            },
+            {
+                id: "lotus-cheesecake",
+                name: "چیزکیک لوتوس",
+                price: null
+            },
+            {
+                id: "banana-cream-cake",
+                name: "کیک خامه‌ای موزی",
+                price: null
+            },
+            {
+                id: "wet-chocolate-cake",
+                name: "کیک خیس شکلاتی",
+                price: null
+            },
+            {
+                id: "carrot-walnut-cake",
+                name: "کیک هویج گردو",
+                price: null
+            },
+            {
+                id: "roulade",
+                name: "رولت",
+                price: null
+            }
         ]
     }
-
 ];
 
 
-const numberFormatter = new Intl.NumberFormat("fa-IR");
+/* =========================================================
+   HELPERS
+   ========================================================= */
 
-const categoryNav = document.getElementById("categoryNav");
-const menuContent = document.getElementById("menuContent");
-const searchInput = document.getElementById("searchInput");
-const noResults = document.getElementById("noResults");
-const focusSearch = document.getElementById("focusSearch");
-const backToTop = document.getElementById("backToTop");
-
-
-// اطلاعات کافه
-document.getElementById("openingHours").textContent =
-    cafeInfo.openingHours;
-
-document.getElementById("address").textContent =
-    cafeInfo.address;
-
-
-// نمایش قیمت
 function formatPrice(price) {
-
     if (
         price === null ||
         price === undefined ||
-        !Number.isFinite(price) ||
-        price <= 0
+        price === "" ||
+        Number(price) <= 0
     ) {
         return "";
     }
 
-    return `
-        ${numberFormatter.format(price)}
-        <span class="unit">تومان</span>
-    `;
+    return `${Number(price).toLocaleString("fa-IR")} تومان`;
 }
 
 
-// جلوگیری از ورود HTML ناخواسته
-function escapeHtml(value) {
-
-    return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+function normalizeText(text) {
+    return String(text || "")
+        .trim()
+        .toLowerCase()
+        .replace(/ي/g, "ی")
+        .replace(/ك/g, "ک");
 }
 
 
-// ساخت دسته‌بندی‌ها
-function renderCategories(activeId = "all") {
+/* =========================================================
+   DOM ELEMENTS
+   ========================================================= */
 
-    const allButton = `
-        <button
-            class="category-button ${activeId === "all" ? "active" : ""}"
-            data-category="all"
-        >
-            همه
-        </button>
-    `;
+const categoryNav = document.getElementById("categoryNav");
+const menuSection = document.getElementById("menuSection");
 
+const searchInput = document.getElementById("searchInput");
+const clearSearchButton = document.getElementById("clearSearchButton");
 
-    const buttons = menuData
-        .map(category => {
+const viewMenuButton = document.getElementById("viewMenuButton");
+const searchButton = document.getElementById("searchButton");
 
-            return `
-                <button
-                    class="category-button ${
-                        activeId === category.id ? "active" : ""
-                    }"
-                    data-category="${escapeHtml(category.id)}"
-                >
-                    ${escapeHtml(category.title)}
-                </button>
-            `;
+const backToTopButton = document.getElementById("backToTop");
 
-        })
-        .join("");
+const openingHoursElement = document.getElementById("openingHours");
+const cafeAddressElement = document.getElementById("cafeAddress");
 
 
-    categoryNav.innerHTML =
-        allButton + buttons;
-}
+/* =========================================================
+   RENDER CATEGORY NAVIGATION
+   ========================================================= */
 
-
-// جستجو
-function productMatches(product, query) {
-
-    if (!query) {
-        return true;
+function renderCategoryNavigation() {
+    if (!categoryNav) {
+        return;
     }
 
-    const text = `
-        ${product.name}
-    `.toLocaleLowerCase("fa");
+    categoryNav.innerHTML = "";
 
+    menuData.forEach((category) => {
+        const button = document.createElement("button");
 
-    return text.includes(
-        query.toLocaleLowerCase("fa")
-    );
-}
+        button.type = "button";
+        button.className = "category-button";
 
+        button.dataset.category = category.id;
 
-// ساخت منو
-function renderMenu(categoryId = "all", query = "") {
+        button.innerHTML = `
+            <span>${category.icon}</span>
+            <span>${category.title}</span>
+        `;
 
-    const normalizedQuery =
-        query.trim();
-
-
-    const categories =
-        categoryId === "all"
-            ? menuData
-            : menuData.filter(
-                category =>
-                    category.id === categoryId
-            );
-
-
-    let visibleProducts = 0;
-
-
-    menuContent.innerHTML = categories
-        .map(category => {
-
-            const products =
-                category.products.filter(
-                    product =>
-                        productMatches(
-                            product,
-                            normalizedQuery
-                        )
-                );
-
-
-            if (!products.length) {
-                return "";
-            }
-
-
-            visibleProducts +=
-                products.length;
-
-
-            return `
-                <section
-                    class="category-block"
-                    id="category-${escapeHtml(category.id)}"
-                >
-
-                    <div class="category-heading">
-
-                        <h3>
-                            ${escapeHtml(category.title)}
-                        </h3>
-
-                        <div class="line"></div>
-
-                        <small>
-                            ${numberFormatter.format(products.length)}
-                            آیتم
-                        </small>
-
-                    </div>
-
-
-                    <div class="products-grid">
-
-                        ${products
-                            .map(product => {
-
-                                const price =
-                                    formatPrice(
-                                        product.price
-                                    );
-
-
-                                return `
-                                    <article
-                                        class="product-card"
-                                    >
-
-                                        <div class="product-top">
-
-                                            <h4
-                                                class="product-name"
-                                            >
-                                                ${escapeHtml(
-                                                    product.name
-                                                )}
-                                            </h4>
-
-                                            ${
-                                                price
-                                                    ? `
-                                                        <div
-                                                            class="product-price"
-                                                        >
-                                                            ${price}
-                                                        </div>
-                                                    `
-                                                    : ""
-                                            }
-
-                                        </div>
-
-                                    </article>
-                                `;
-
-                            })
-                            .join("")}
-
-                    </div>
-
-                </section>
-            `;
-
-        })
-        .join("");
-
-
-    noResults.hidden =
-        visibleProducts !== 0;
-}
-
-
-// فعال کردن دسته‌بندی
-function setActiveCategory(categoryId) {
-
-    categoryNav
-        .querySelectorAll(".category-button")
-        .forEach(button => {
-
-            button.classList.toggle(
-                "active",
-                button.dataset.category === categoryId
-            );
-
+        button.addEventListener("click", () => {
+            scrollToCategory(category.id);
         });
+
+        categoryNav.appendChild(button);
+    });
 }
 
 
-// کلیک روی دسته‌بندی
-categoryNav.addEventListener(
-    "click",
-    event => {
+/* =========================================================
+   RENDER MENU
+   ========================================================= */
 
-        const button =
-            event.target.closest(
-                ".category-button"
-            );
+function renderMenu(categories = menuData) {
+    if (!menuSection) {
+        return;
+    }
 
+    menuSection.innerHTML = "";
 
-        if (!button) {
+    if (!categories.length) {
+        renderEmptyState();
+        return;
+    }
+
+    categories.forEach((category) => {
+        if (!category.products || !category.products.length) {
             return;
         }
 
+        const categorySection = document.createElement("section");
 
-        const categoryId =
-            button.dataset.category;
+        categorySection.className = "menu-category";
+        categorySection.id = `category-${category.id}`;
+
+        categorySection.innerHTML = `
+            <div class="category-header">
+                <h2 class="category-title">
+                    <span class="category-title-icon">
+                        ${category.icon}
+                    </span>
+
+                    <span>
+                        ${category.title}
+                    </span>
+                </h2>
+            </div>
+
+            <div class="products-grid">
+                ${category.products
+                    .map((product) => createProductCard(product))
+                    .join("")}
+            </div>
+        `;
+
+        menuSection.appendChild(categorySection);
+    });
+}
 
 
-        setActiveCategory(categoryId);
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+function createProductCard(product) {
+    const priceText = formatPrice(product.price);
+
+    return `
+        <article class="product-card">
+
+            <div>
+                <h3 class="product-name">
+                    ${escapeHtml(product.name)}
+                </h3>
+            </div>
+
+            <div class="product-bottom">
+
+                ${
+                    priceText
+                        ? `
+                            <span class="product-price">
+                                ${priceText}
+                            </span>
+                        `
+                        : `
+                            <span class="product-price empty">
+                                قیمت به‌زودی
+                            </span>
+                        `
+                }
+
+            </div>
+
+        </article>
+    `;
+}
 
 
-        renderMenu(
-            categoryId,
-            searchInput.value
-        );
+/* =========================================================
+   EMPTY SEARCH STATE
+   ========================================================= */
+
+function renderEmptyState() {
+    menuSection.innerHTML = `
+        <div class="empty-state">
+
+            <div class="empty-state-icon">
+                ☕
+            </div>
+
+            <div class="empty-state-title">
+                محصولی پیدا نشد
+            </div>
+
+            <div class="empty-state-text">
+                عبارت جستجو را تغییر دهید و دوباره امتحان کنید.
+            </div>
+
+        </div>
+    `;
+}
 
 
-        if (categoryId !== "all") {
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
-            const target =
-                document.getElementById(
-                    `category-${categoryId}`
-                );
+function searchProducts(query) {
+    const normalizedQuery = normalizeText(query);
 
-
-            if (target) {
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        } else {
-
-            document
-                .getElementById("menu")
-                .scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-        }
-
+    if (!normalizedQuery) {
+        renderMenu(menuData);
+        return;
     }
-);
 
+    const filteredCategories = [];
 
-// جستجوی محصول
-searchInput.addEventListener(
-    "input",
-    () => {
-
-        const query =
-            searchInput.value;
-
-
-        setActiveCategory("all");
-
-
-        renderMenu(
-            "all",
-            query
-        );
-
-    }
-);
-
-
-// دکمه جستجو
-focusSearch.addEventListener(
-    "click",
-    () => {
-
-        searchInput.focus();
-
-
-        searchInput.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
+    menuData.forEach((category) => {
+        const filteredProducts = category.products.filter((product) => {
+            return normalizeText(product.name).includes(normalizedQuery);
         });
 
+        if (filteredProducts.length > 0) {
+            filteredCategories.push({
+                ...category,
+                products: filteredProducts
+            });
+        }
+    });
+
+    renderMenu(filteredCategories);
+}
+
+
+/* =========================================================
+   SEARCH EVENTS
+   ========================================================= */
+
+if (searchInput) {
+    searchInput.addEventListener("input", () => {
+        searchProducts(searchInput.value);
+    });
+}
+
+
+if (clearSearchButton) {
+    clearSearchButton.addEventListener("click", () => {
+
+        if (searchInput) {
+            searchInput.value = "";
+            searchInput.focus();
+        }
+
+        renderMenu(menuData);
+    });
+}
+
+
+/* =========================================================
+   SCROLL TO MENU
+   ========================================================= */
+
+if (viewMenuButton) {
+    viewMenuButton.addEventListener("click", () => {
+
+        const menu = document.getElementById("menuSection");
+
+        if (menu) {
+            menu.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+}
+
+
+/* =========================================================
+   FOCUS SEARCH
+   ========================================================= */
+
+if (searchButton) {
+    searchButton.addEventListener("click", () => {
+
+        const searchSection = document.getElementById("searchSection");
+
+        if (searchSection) {
+            searchSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        setTimeout(() => {
+            if (searchInput) {
+                searchInput.focus();
+            }
+        }, 500);
+    });
+}
+
+
+/* =========================================================
+   CATEGORY SCROLL
+   ========================================================= */
+
+function scrollToCategory(categoryId) {
+    const target = document.getElementById(
+        `category-${categoryId}`
+    );
+
+    if (!target) {
+        return;
     }
-);
+
+    target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 
 
-// دکمه بازگشت به بالا
-window.addEventListener(
-    "scroll",
-    () => {
+/* =========================================================
+   ACTIVE CATEGORY
+   ========================================================= */
 
-        backToTop.classList.toggle(
-            "visible",
-            window.scrollY > 450
+function updateActiveCategory() {
+    const categoryButtons = document.querySelectorAll(
+        ".category-nav button"
+    );
+
+    const categorySections = document.querySelectorAll(
+        ".menu-category"
+    );
+
+    if (!categoryButtons.length || !categorySections.length) {
+        return;
+    }
+
+    let currentCategory = "";
+
+    categorySections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 180) {
+            currentCategory = section.id.replace(
+                "category-",
+                ""
+            );
+        }
+    });
+
+    categoryButtons.forEach((button) => {
+        button.classList.toggle(
+            "active",
+            button.dataset.category === currentCategory
         );
+    });
+}
 
+
+window.addEventListener("scroll", updateActiveCategory);
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+function updateBackToTop() {
+    if (!backToTopButton) {
+        return;
     }
-);
+
+    if (window.scrollY > 500) {
+        backToTopButton.classList.add("show");
+    } else {
+        backToTopButton.classList.remove("show");
+    }
+}
 
 
-backToTop.addEventListener(
-    "click",
-    () => {
+window.addEventListener("scroll", updateBackToTop);
+
+
+if (backToTopButton) {
+    backToTopButton.addEventListener("click", () => {
 
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
 
+    });
+}
+
+
+/* =========================================================
+   CAFE INFORMATION
+   ========================================================= */
+
+function renderCafeInfo() {
+
+    if (openingHoursElement) {
+        openingHoursElement.textContent =
+            cafeInfo.openingHours;
     }
+
+    if (cafeAddressElement) {
+        cafeAddressElement.textContent =
+            cafeInfo.address;
+    }
+}
+
+
+/* =========================================================
+   HTML SAFETY
+   ========================================================= */
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+function initializeMenu() {
+    renderCategoryNavigation();
+    renderMenu();
+    renderCafeInfo();
+
+    updateBackToTop();
+    updateActiveCategory();
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initializeMenu
 );
-
-
-// اجرای اولیه
-renderCategories();
-renderMenu();
