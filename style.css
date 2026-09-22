@@ -2,15 +2,12 @@
 
 :root {
     --cream: #f5efe6;
-    --cream-light: #fbf8f3;
+    --cream-light: #fffaf3;
     --brown: #5a3825;
     --brown-dark: #3f271a;
     --brown-light: #80624d;
     --beige: #d9c8b7;
     --border: rgba(90, 56, 37, 0.14);
-    --white: #fffdf9;
-    --danger: #8b3a3a;
-    --shadow: 0 14px 40px rgba(63, 39, 26, 0.08);
 }
 
 * {
@@ -39,46 +36,41 @@ button {
     cursor: pointer;
 }
 
-.site {
-    min-height: 100vh;
-}
-
 /* =========================
    HERO
 ========================= */
 
 .hero {
     position: relative;
-    min-height: 700px;
+    min-height: 680px;
     margin: 22px;
     padding: 32px;
-    background:
-        radial-gradient(
-            circle at 5% 5%,
-            rgba(255, 255, 255, 0.10) 0,
-            rgba(255, 255, 255, 0.10) 150px,
-            transparent 151px
-        ),
-        radial-gradient(
-            circle at 98% 100%,
-            rgba(255, 255, 255, 0.08) 0,
-            rgba(255, 255, 255, 0.08) 120px,
-            transparent 121px
-        ),
-        var(--brown);
-
-    color: var(--cream-light);
+    background: var(--cream-light);
+    color: var(--brown);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border: 1px solid rgba(90, 56, 37, 0.12);
 }
 
 .hero::before {
     content: "";
     position: absolute;
     inset: 30px;
-    border: 1px solid rgba(255, 248, 238, 0.18);
+    border: 1px solid rgba(90, 56, 37, 0.15);
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(217, 200, 183, 0.28);
+    top: -210px;
+    left: -120px;
     pointer-events: none;
 }
 
@@ -98,21 +90,10 @@ button {
 
 .brand-logo {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 145px;
+    height: 145px;
     object-fit: contain;
-
-    /* قاب روشن برای جدا شدن لوگو از زمینه */
-    background: var(--cream-light);
-    border-radius: 50%;
-
-    padding: 15px;
-
-    margin: 0 auto 24px;
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.18),
-        0 0 0 8px rgba(245, 239, 230, 0.08);
+    margin: 0 auto 25px;
 }
 
 /* =========================
@@ -120,10 +101,10 @@ button {
 ========================= */
 
 .eyebrow {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     letter-spacing: 5px;
-    color: #dfcfbf;
+    color: var(--brown-light);
     margin-bottom: 18px;
 }
 
@@ -133,14 +114,14 @@ button {
     line-height: 1;
     letter-spacing: 5px;
     font-weight: 700;
-    color: #fffaf3;
+    color: var(--brown);
     margin-bottom: 24px;
 }
 
 .tagline {
     font-size: 17px;
-    font-weight: 300;
-    color: #eadfd3;
+    font-weight: 400;
+    color: var(--brown-light);
     margin-bottom: 34px;
 }
 
@@ -162,8 +143,7 @@ button {
     transition:
         transform 0.25s ease,
         background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+        color 0.25s ease;
 }
 
 .button:hover {
@@ -171,15 +151,15 @@ button {
 }
 
 .button-primary {
-    border: 1px solid var(--cream-light);
-    background: var(--cream-light);
-    color: var(--brown);
+    border: 1px solid var(--brown);
+    background: var(--brown);
+    color: var(--cream-light);
 }
 
 .button-secondary {
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(90, 56, 37, 0.35);
     background: transparent;
-    color: var(--cream-light);
+    color: var(--brown);
 }
 
 /* =========================
@@ -251,13 +231,10 @@ main {
     height: 52px;
     border: 1px solid var(--border);
     border-radius: 999px;
-    background: rgba(255, 253, 249, 0.78);
+    background: rgba(255, 253, 249, 0.8);
     color: var(--brown-dark);
     outline: none;
     padding: 0 50px 0 20px;
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 .search input::placeholder {
@@ -270,7 +247,7 @@ main {
 }
 
 /* =========================
-   CATEGORY NAV
+   CATEGORY
 ========================= */
 
 .category-bar {
@@ -285,7 +262,7 @@ main {
     gap: 9px;
     overflow-x: auto;
     padding: 8px;
-    background: rgba(251, 248, 243, 0.92);
+    background: rgba(251, 248, 243, 0.95);
     border: 1px solid var(--border);
     border-radius: 999px;
     box-shadow: 0 8px 25px rgba(63, 39, 26, 0.06);
@@ -306,9 +283,6 @@ main {
     padding: 10px 18px;
     font-size: 13px;
     white-space: nowrap;
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
 }
 
 .category-button:hover {
@@ -359,10 +333,6 @@ main {
     font-size: 11px;
 }
 
-/* =========================
-   PRODUCT CARDS
-========================= */
-
 .products-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -372,7 +342,7 @@ main {
 .product-card {
     min-height: 74px;
     padding: 17px 20px;
-    background: rgba(255, 253, 249, 0.76);
+    background: rgba(255, 253, 249, 0.78);
     border: 1px solid rgba(90, 56, 37, 0.10);
     border-radius: 16px;
     box-shadow: 0 7px 25px rgba(63, 39, 26, 0.035);
@@ -385,7 +355,7 @@ main {
 .product-card:hover {
     transform: translateY(-2px);
     border-color: rgba(90, 56, 37, 0.18);
-    box-shadow: var(--shadow);
+    box-shadow: 0 14px 40px rgba(63, 39, 26, 0.08);
 }
 
 .product-top {
@@ -417,7 +387,7 @@ main {
 }
 
 /* =========================
-   EMPTY STATE
+   EMPTY
 ========================= */
 
 .empty-state {
@@ -495,25 +465,19 @@ footer {
     margin: 0 22px 22px;
     min-height: 240px;
     padding: 45px 20px;
-    background: var(--brown-dark);
+    background: var(--brown);
     color: var(--cream-light);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-radius: 2px;
 }
 
 .footer-logo {
     width: 68px;
     height: 68px;
     object-fit: contain;
-
-    background: var(--cream-light);
-    border-radius: 50%;
-    padding: 8px;
-
     margin-bottom: 14px;
 }
 
@@ -524,7 +488,7 @@ footer {
 }
 
 .footer-subtitle {
-    color: #bfae9d;
+    color: #d8c7b6;
     font-size: 10px;
     letter-spacing: 4px;
     margin-top: 5px;
@@ -548,10 +512,7 @@ footer {
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease;
+    transition: 0.25s ease;
     z-index: 50;
 }
 
@@ -600,14 +561,12 @@ footer {
     .brand-logo {
         width: 125px;
         height: 125px;
-        padding: 12px;
         margin-bottom: 22px;
     }
 
     .eyebrow {
         font-size: 10px;
         letter-spacing: 3px;
-        margin-bottom: 15px;
     }
 
     .hero h1 {
@@ -687,7 +646,7 @@ footer {
 }
 
 /* =========================
-   VERY SMALL MOBILE
+   SMALL MOBILE
 ========================= */
 
 @media (max-width: 420px) {
