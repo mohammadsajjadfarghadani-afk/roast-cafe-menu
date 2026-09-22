@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#5A3825"
+    >
+
+    <meta
+        name="description"
+        content="منوی دیجیتال ROAST CAFE"
+    >
+
+    <title>
+        ROAST CAFE | منوی دیجیتال
+    </title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/roast-cafe-logo.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+<div class="site">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-decoration hero-decoration-a"></div>
+        <div class="hero-decoration hero-decoration-b"></div>
+
+        <div class="hero-content">
+
+            <img
+                class="brand-logo"
+                src="assets/roast-cafe-logo.png"
+                alt="ROAST CAFE"
+            >
+
+            <p class="eyebrow">
+                DIGITAL MENU
+            </p>
+
+            <h1>
+                ROAST CAFE
+            </h1>
+
+            <p class="tagline">
+                یک فنجان خوب، یک لحظه خوب.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="#menu"
+                    class="button button-primary"
+                >
+                    مشاهده منو
+                </a>
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="focusSearch"
+                >
+                    جستجوی محصول
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main id="menu">
+
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <div>
+
+                <p class="section-kicker">
+                    OUR MENU
+                </p>
+
+                <h2>
+                    منوی ROAST
+                </h2>
+
+                <p>
+                    محصول موردنظرتان را انتخاب کنید.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <label class="search">
+
+                <span class="sr-only">
+                    جستجوی محصول
+                </span>
+
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+
+                    <circle
+                        cx="11"
+                        cy="11"
+                        r="7"
+                    ></circle>
+
+                    <path
+                        d="m20 20-4-4"
+                    ></path>
+
+                </svg>
+
+
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="جستجوی محصول..."
+                    autocomplete="off"
+                >
+
+            </label>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORY NAVIGATION
+        ========================== -->
+
+        <nav
+            class="category-bar"
+            aria-label="دسته‌بندی منو"
+        >
+
+            <div
+                id="categoryNav"
+                class="category-scroll"
+            ></div>
+
+        </nav>
+
+
+        <!-- =========================
+             MENU
+        ========================== -->
+
+        <section class="menu-area">
+
+            <div id="menuContent"></div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                id="noResults"
+                class="empty-state"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    ⌕
+                </div>
+
+                <h3>
+                    محصولی پیدا نشد
+                </h3>
+
+                <p>
+                    عبارت جستجو یا دسته‌بندی دیگری را امتحان کنید.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CAFE INFORMATION
+        ========================== -->
+
+        <section class="info-grid">
+
+            <article class="info-card">
+
+                <div class="info-icon">
+                    ◷
+                </div>
+
+                <div>
+
+                    <h3>
+                        ساعت کاری
+                    </h3>
+
+                    <p id="openingHours">
+                        در حال آماده‌سازی...
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <div class="info-icon">
+                    ⌖
+                </div>
+
+                <div>
+
+                    <h3>
+                        آدرس
+                    </h3>
+
+                    <p id="address">
+                        در حال آماده‌سازی...
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <img
+            src="assets/roast-cafe-logo.png"
+            alt="ROAST CAFE"
+            class="footer-logo"
+        >
+
+        <div class="footer-name">
+            ROAST CAFE
+        </div>
+
+        <div class="footer-subtitle">
+            DIGITAL MENU
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- =========================
+     BACK TO TOP
+========================== -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="بازگشت به بالا"
+>
+    ↑
+</button>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="menu.js"></script>
+
+</body>
+
+</html>
