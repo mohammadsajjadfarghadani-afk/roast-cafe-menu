@@ -1,0 +1,547 @@
+/* =========================================
+   ROAST CAFE
+   DIGITAL MENU
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    direction: rtl;
+    font-family: Tahoma, Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f5eadb 0%,
+            #f8efe4 45%,
+            #f3e5d4 100%
+        );
+
+    color: #3d281d;
+
+    min-height: 100vh;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    padding: 45px 20px 55px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #efe0ce 0%,
+            #f5e9da 100%
+        );
+
+    border-bottom:
+        1px solid rgba(91, 57, 38, 0.12);
+
+    overflow: hidden;
+}
+
+
+/* دکور بالای صفحه */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -150px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(176, 133, 91, 0.10);
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    bottom: -140px;
+    left: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(112, 72, 47, 0.07);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-container {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 20px;
+
+    width: 210px;
+    height: 210px;
+}
+
+
+.logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 0;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero h1 {
+    position: relative;
+
+    z-index: 2;
+
+    color: #4a2d1e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    margin-top: 5px;
+}
+
+
+.hero p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 4px;
+
+    color: #9a7658;
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    direction: ltr;
+}
+
+
+/* =========================================
+   MENU CONTAINER
+========================================= */
+
+.menu-container {
+    width: min(94%, 720px);
+
+    margin: 0 auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.menu-category {
+    position: relative;
+
+    margin-bottom: 35px;
+
+    padding: 24px 18px 20px;
+
+    background:
+        rgba(255, 250, 243, 0.82);
+
+    border:
+        1px solid rgba(91, 57, 38, 0.10);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(82, 52, 34, 0.07);
+
+    overflow: hidden;
+}
+
+
+/* خط تزئینی بالای هر دسته */
+
+.menu-category::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b28a66,
+            transparent
+        );
+}
+
+
+/* =========================================
+   CATEGORY HEADER
+========================================= */
+
+.category-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 18px;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid rgba(91, 57, 38, 0.10);
+}
+
+
+.category-icon {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    background: #ead7c0;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+
+.category-header h2 {
+    color: #4a2d1e;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.category-header > div > span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #a17b5c;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    direction: ltr;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   MENU ITEMS
+========================================= */
+
+.menu-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.menu-item {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 8px 12px;
+
+    background: rgba(245, 234, 219, 0.55);
+
+    border-radius: 11px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.menu-item::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    margin-left: 10px;
+
+    flex-shrink: 0;
+
+    background: #a67c59;
+
+    border-radius: 50%;
+}
+
+
+.menu-item span {
+    color: #493126;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.menu-item:hover {
+    background: #ead9c5;
+
+    transform: translateX(-2px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 45px 20px 35px;
+
+    text-align: center;
+
+    background: #4a2d1e;
+
+    color: #f5e9da;
+}
+
+
+footer h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    direction: ltr;
+}
+
+
+footer p {
+    margin-top: 7px;
+
+    color: #d8bfa4;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+
+    .logo-container {
+        width: 180px;
+        height: 180px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .hero h1 {
+        font-size: 25px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .hero p {
+        font-size: 10px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .menu-container {
+        width: 94%;
+
+        padding-top: 25px;
+    }
+
+
+    .menu-category {
+        padding: 20px 13px 16px;
+
+        margin-bottom: 24px;
+
+        border-radius: 18px;
+    }
+
+
+    .category-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 19px;
+    }
+
+
+    .category-header h2 {
+        font-size: 20px;
+    }
+
+
+    .category-header > div > span {
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .menu-item {
+        min-height: 46px;
+
+        padding: 7px 10px;
+    }
+
+
+    .menu-item span {
+        font-size: 14px;
+    }
+
+
+    footer {
+        padding: 35px 20px 30px;
+    }
+
+
+    footer h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .logo-container {
+        width: 155px;
+        height: 155px;
+    }
+
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+
+    .menu-category {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .menu-item span {
+        font-size: 13px;
+    }
+
+}
