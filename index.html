@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#efe1d0">
+  <meta name="description" content="منوی دیجیتال ROAST CAFE">
+  <title>ROAST CAFE | منوی دیجیتال</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <header class="hero">
+      <div class="hero-glow"></div>
+
+      <div class="logo-wrap">
+        <img src="assets/roast-cafe-logo.png" alt="ROAST CAFE" class="logo">
+      </div>
+
+      <div class="hero-text">
+        <span class="eyebrow">DIGITAL MENU</span>
+        <h1>منوی ROAST CAFE</h1>
+        <p>انتخاب کن، بازش کن، لذت ببر ☕</p>
+      </div>
+    </header>
+
+    <section class="menu-area" aria-label="منوی کافه">
+      <div class="menu-tools">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="جستجو در منو..." autocomplete="off">
+          <button id="clearSearch" type="button" aria-label="پاک کردن جستجو" hidden>×</button>
+        </label>
+
+        <p id="resultText" class="result-text" aria-live="polite"></p>
+      </div>
+
+      <div id="menu" class="menu-list">
+
+        <section class="menu-category" data-category="قهوه coffee">
+          <button class="category-header" type="button" aria-expanded="false">
+            <span class="category-title">
+              <span class="category-icon">☕</span>
+              <span>
+                <strong>قهوه</strong>
+                <small>COFFEE</small>
+              </span>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="category-content">
+            <ul>
+              <li>اسپرسو سینگل</li>
+              <li>اسپرسو دبل</li>
+              <li>آمریکانو</li>
+              <li>کاپوچینو</li>
+              <li>موکا</li>
+              <li>کارامل ماکیاتو</li>
+              <li>هات چاکلت</li>
+              <li>وایت چاکلت</li>
+              <li>بلو چاکلت</li>
+              <li>لته (دبل / سینگل)</li>
+              <li>لته کاراملی</li>
+              <li>لته فندق</li>
+              <li>لته وانیل</li>
+              <li>لته توت فرنگی</li>
+              <li>لته نارگیل</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="menu-category" data-category="قهوه سرد cold coffee">
+          <button class="category-header" type="button" aria-expanded="false">
+            <span class="category-title">
+              <span class="category-icon">🧊</span>
+              <span>
+                <strong>قهوه سرد</strong>
+                <small>COLD COFFEE</small>
+              </span>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="category-content">
+            <ul>
+              <li>آیس لته</li>
+              <li>آیس موکا</li>
+              <li>آیس آمریکانو</li>
+              <li>آیس لته وانیل</li>
+              <li>آیس لته فندق</li>
+              <li>آیس لته توت فرنگی</li>
+              <li>آیس کارامل ماکیاتو</li>
+              <li>آفوگاتو</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="menu-category" data-category="چای tea">
+          <button class="category-header" type="button" aria-expanded="false">
+            <span class="category-title">
+              <span class="category-icon">🫖</span>
+              <span>
+                <strong>چای</strong>
+                <small>TEA</small>
+              </span>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="category-content">
+            <ul>
+              <li>چای سیاه</li>
+              <li>چای انگلیسی</li>
+              <li>چای زعفران</li>
+              <li>چای ترش</li>
+              <li>چای ماسالا</li>
+              <li>چای کرک</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="menu-category" data-category="دمنوش herbal infusion">
+          <button class="category-header" type="button" aria-expanded="false">
+            <span class="category-title">
+              <span class="category-icon">🌿</span>
+              <span>
+                <strong>دمنوش</strong>
+                <small>HERBAL INFUSION</small>
+              </span>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="category-content">
+            <ul>
+              <li>گل گاوزبان</li>
+              <li>پونه</li>
+              <li>میکس</li>
+              <li>بهار نارنج</li>
+              <li>بابونه</li>
+              <li>به لیمو</li>
+              <li>آرامش</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="menu-category" data-category="کیک cake dessert">
+          <button class="category-header" type="button" aria-expanded="false">
+            <span class="category-title">
+              <span class="category-icon">🍰</span>
+              <span>
+                <strong>کیک</strong>
+                <small>CAKE</small>
+              </span>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="category-content">
+            <ul>
+              <li>کروسان</li>
+              <li>چیز کیک</li>
+              <li>خیس شکلاتی</li>
+              <li>هویج گردو</li>
+              <li>تیرامیسو</li>
+              <li>دبی چاکلت</li>
+              <li>موکا</li>
+              <li>لوتوس</li>
+              <li>کوکی</li>
+              <li>باقلوا ترکی</li>
+              <li>ردولت</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="menu-category" data-category="صبحانه breakfast">
+          <button class="category-header" type="button" aria-expanded="false">
+            <span class="category-title">
+              <span class="category-icon">🍳</span>
+              <span>
+                <strong>صبحانه</strong>
+                <small>BREAKFAST</small>
+              </span>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="category-content">
+            <ul>
+              <li>نیمرو</li>
+              <li>املت (رب / گوجه)</li>
+              <li>املت پنیری</li>
+              <li>سوسیس تخم مرغ</li>
+              <li>تخم مرغ خرما - گردو</li>
+              <li>تخم مرغ تن ماهی</li>
+              <li>سیب زمینی تخم مرغ</li>
+              <li>خوراک لوبیا (قارچ)</li>
+              <li>عدسی</li>
+              <li>خامه عسل</li>
+              <li>نون پنیر گردو</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <div>☕</div>
+        <strong>موردی پیدا نشد</strong>
+        <span>عبارت دیگری را جستجو کن.</span>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-line"></div>
+      <strong>ROAST CAFE</strong>
+      <span>با عشق آماده می‌کنیم</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
